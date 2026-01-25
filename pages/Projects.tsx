@@ -1,12 +1,9 @@
 import React from 'react';
 import PropertyCard from '../components/PropertyCard';
 import { Property } from '../types';
+import properties from '../data/properties.json'; // CMS data
 
-interface ProjectsProps {
-  properties: Property[];
-}
-
-const Projects: React.FC<ProjectsProps> = ({ properties }) => {
+const Projects: React.FC = () => {
   return (
     <div className="py-16 bg-gray-50 animate-fade-in">
       <div className="container mx-auto px-4">
@@ -27,7 +24,7 @@ const Projects: React.FC<ProjectsProps> = ({ properties }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {properties.map(prop => (
+          {properties.map((prop: Property) => (
             <PropertyCard key={prop.id} property={prop} />
           ))}
 
