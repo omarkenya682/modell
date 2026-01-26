@@ -29,5 +29,5 @@ collections:
           name: "file_system"
           config:
             allow_multiple: false
-            folder: "public/assets/uploads"
-            public_folder: "/assets/uploads"
+            folder: "assets/uploads"    # path in repo
+            public_folder: "/assets/uploads"  # path used on website
