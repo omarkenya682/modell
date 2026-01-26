@@ -11,8 +11,11 @@ collections:
     folder: "data/projects"
     create: true
     slug: "{{slug}}"
+    extension: "json"   # ensures JSON is used, not markdown
+    media_folder: "public/assets/uploads"   # where the images are saved in repo
+    public_folder: "/assets/uploads"        # URL used on the website
     fields:
-      - { label: "Project ID", name: "id", widget: "string", required: true }
+      - { label: "ID", name: "id", widget: "number", required: true }
       - { label: "Project Name", name: "name", widget: "string", required: true }
       - { label: "Price (KES)", name: "price", widget: "number", required: true }
       - { label: "Deposit (KES)", name: "deposit", widget: "number", required: true }
