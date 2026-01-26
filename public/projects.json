@@ -26,6 +26,15 @@
       "location": "Naserian",
       "description": "Ready Title deeds\n12 Months Payment Plan",
       "image": "/assets/uploads/hope-gardens-phase-i.png.jpeg"
+    },
+    {
+      "description": "Ready Title deeds\n12 Months Payment Plan",
+      "id": "Hope Gardens Phase II",
+      "name": "Hope Gardens Phase II",
+      "price": 450000,
+      "deposit": 50000,
+      "location": "Naserian",
+      "image": "/assets/uploads/hope-gardens-phase-ii.png.jpeg"
     }
   ]
 }
