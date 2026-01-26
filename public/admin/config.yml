@@ -1,29 +1,30 @@
 backend:
   name: git-gateway
-  branch: main # your GitHub branch
+  branch: main
 
-media_folder: "public/assets/uploads"   # Where images are stored in repo
-public_folder: "/assets/uploads"        # Path used in website
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
-  - name: "projects"
-    label: "Projects"
+  - name: "site"
+    label: "Site Content"
     files:
       - name: "projects"
-        label: "All Projects"
+        label: "Projects"
         file: "public/projects.json"
-        format: "json"
         fields:
-         - label: "Projects"
-  name: "projects"
-  widget: "list"
-  allow_add: true
-  collapsed: false
-  fields:
-    - { label: "ID", name: "id", widget: "string" }
-    - { label: "Project Name", name: "name", widget: "string" }
-    - { label: "Price (KES)", name: "price", widget: "number" }
-    - { label: "Deposit (KES)", name: "deposit", widget: "number" }
-    - { label: "Location", name: "location", widget: "string" }
-    - { label: "Description", name: "description", widget: "text" }
-    - { label: "Image", name: "image", widget: "string" }
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Project Name", name: "name", widget: "string" }
+              - { label: "Price (KES)", name: "price", widget: "number" }
+              - { label: "Deposit (KES)", name: "deposit", widget: "number" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Image"
+                name: "image"
+                widget: "image"
