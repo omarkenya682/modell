@@ -1,11 +1,9 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # your GitHub branch
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
-
-publish_mode: editorial_workflow
+media_folder: "public/assets/uploads"   # Where images are stored in repo
+public_folder: "/assets/uploads"        # Path used in website
 
 collections:
   - name: "projects"
@@ -14,13 +12,19 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-    - label: "Image"
-  name: "image"
-  widget: "image"
-  required: true
-  media_library:
-    name: "file_system"
-    config:
-      allow_multiple: false
-      folder: "public/assets/uploads"      # where files will be saved
-      public_folder: "/assets/uploads"     # path to use in your website
+      - { label: "Project ID", name: "id", widget: "string", required: true }
+      - { label: "Project Name", name: "name", widget: "string", required: true }
+      - { label: "Price (KES)", name: "price", widget: "number", required: true }
+      - { label: "Deposit (KES)", name: "deposit", widget: "number", required: true }
+      - { label: "Location", name: "location", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: true
+        media_library:
+          name: "file_system"
+          config:
+            allow_multiple: false
+            folder: "public/assets/uploads"
+            public_folder: "/assets/uploads"
