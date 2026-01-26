@@ -4,9 +4,11 @@ import Button from '../components/Button';
 import PropertyCard from '../components/PropertyCard';
 import { Property, SiteSettings, ViewState } from '../types';
 
-// Dynamically import all JSON project files
+// Dynamically import all JSON project files (CMS-driven)
 const projectFiles = import.meta.glob('../data/projects/*.json', { eager: true });
-const allProjects: Property[] = Object.values(projectFiles).map((mod: any) => mod.default);
+const allProjects: Property[] = Object.values(projectFiles).map(
+  (mod: any) => mod.default
+);
 
 interface HomeProps {
   setView: (view: ViewState) => void;
@@ -15,16 +17,22 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ setView, settings }) => {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
-  const heroImages = settings?.heroImages?.length
-    ? settings.heroImages
-    : [
-        'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
-      ];
 
+  // Hero images (settings first, fallback second)
+  const heroImages =
+    settings?.heroImages && settings.heroImages.length > 0
+      ? settings.heroImages
+      : [
+          'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+        ];
+
+  // Featured projects = first 3 from CMS
   const featuredProperties = allProjects.slice(0, 3);
-  const whyUsImage = settings?.whyUsImageUrl || 'https://picsum.photos/600/500?random=20';
+
+  const whyUsImage =
+    settings?.whyUsImageUrl || 'https://picsum.photos/600/500?random=20';
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,17 +58,24 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
           ))}
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-900/60 to-transparent"></div>
         </div>
+
         <div className="container mx-auto px-4 relative z-10 text-white">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Invest in Value Added Plots With{' '}
-              <span className="text-[#FF2C2C] font-extrabold drop-shadow-sm">Ready Title Deeds</span>
+              <span className="text-[#FF2C2C] font-extrabold drop-shadow-sm">
+                Ready Title Deeds
+              </span>
             </h1>
             <p className="text-xl mb-8 text-green-50 font-light">
               We empower you to own property in prime locations with flexible payment plans and titles ready in 30 days.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" onClick={() => setView(ViewState.PROJECTS)}>
+              <Button
+                size="lg"
+                variant="secondary"
+                onClick={() => setView(ViewState.PROJECTS)}
+              >
                 View Projects
               </Button>
             </div>
@@ -72,7 +87,9 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Featured Projects
+            </h2>
             <div className="w-20 h-1 bg-green-600 mx-auto"></div>
           </div>
 
@@ -80,6 +97,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
             {featuredProperties.map((prop) => (
               <PropertyCard key={prop.id} property={prop} />
             ))}
+
             {featuredProperties.length === 0 && (
               <div className="col-span-3 text-center text-gray-500 py-8">
                 No properties available. Check back soon!
@@ -89,8 +107,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
         </div>
       </section>
 
-      {/* The rest of the homepage sections remain unchanged */}
-      {/* Why Choose Us, Stats Section, etc. */}
+      {/* Other homepage sections remain unchanged */}
     </div>
   );
 };
