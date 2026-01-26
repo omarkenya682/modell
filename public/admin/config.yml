@@ -14,14 +14,16 @@ collections:
         file: "public/projects.json"
         format: "json"
         fields:
-          - label: "Projects"
-            name: "projects"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Project Name", name: "name", widget: "string" }
-              - { label: "Price (KES)", name: "price", widget: "number" }
-              - { label: "Deposit (KES)", name: "deposit", widget: "number" }
-              - { label: "Location", name: "location", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Image", name: "image", widget: "string" }
+         - label: "Projects"
+  name: "projects"
+  widget: "list"
+  allow_add: true
+  collapsed: false
+  fields:
+    - { label: "ID", name: "id", widget: "string" }
+    - { label: "Project Name", name: "name", widget: "string" }
+    - { label: "Price (KES)", name: "price", widget: "number" }
+    - { label: "Deposit (KES)", name: "deposit", widget: "number" }
+    - { label: "Location", name: "location", widget: "string" }
+    - { label: "Description", name: "description", widget: "text" }
+    - { label: "Image", name: "image", widget: "string" }
