@@ -1,12 +1,9 @@
-import React from 'react'; 
-import PropertyCard from '../components/PropertyCard'; 
-import { Property } from '../types';
+import React from 'react';
+import PropertyCard from '../components/PropertyCard';
+import projects from '../data/projects';
 
-interface ProjectsProps { 
-  properties: Property[];
-}
+const Projects: React.FC = () => {
 
-const Projects: React.FC<ProjectsProps> = ({ properties }) => {
   return ( 
     <div className="py-16 bg-gray-50 animate-fade-in"> 
       <div className="container mx-auto px-4">
@@ -23,10 +20,10 @@ const Projects: React.FC<ProjectsProps> = ({ properties }) => {
           <button className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm">KCA</button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> 
-          {properties.map(prop => (
+          {projects.map(prop => (
       <PropertyCard key={prop.id} property={prop} /> 
     ))}
-          {properties.length === 0 && ( 
+          {projects.length === 0 && ( 
       <div className="col-span-3 text-center py-12"> 
         <p className="text-gray-500 text-lg">No projects found 
           in the portfolio.</p>
