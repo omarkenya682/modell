@@ -1,47 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import PropertyCard from '../components/PropertyCard';
+import React, { useState } from 'react';
 import { Property } from '../types';
+import { MapPin } from 'lucide-react';
 
-const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<Property[]>([]);
+interface PropertyCardProps {
+  property: Property;
+}
 
-  // Fetch projects.json from public folder
-  useEffect(() => {
-    fetch('/projects.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setProjects(data.projects || []);
-      })
-      .catch((err) => {
-        console.error('Error loading projects:', err);
-      });
-  }, []);
+const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const imageUrl = property.image
+    ? `/assets/uploads/${property.image}`
+    : 'https://picsum.photos/400/300?random=1'; // fallback image
 
   return (
-    <div className="py-16 bg-gray-50 animate-fade-in">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Projects Portfolio</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Browse our extensive list of value-added properties across the country. All our projects come with ready title deeds and flexible payment plans.
-          </p>
-        </div>
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+      <div className="relative w-full h-64">
+        <img
+          src={imageUrl}
+          alt={property.name}
+          className="object-cover w-full h-full"
+          onError={(e) => (e.target as HTMLImageElement).src = 'https://picsum.photos/400/300?random=2'}
+        />
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">{property.name}</h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((prop) => (
-            <PropertyCard key={prop.id} property={prop} />
-          ))}
+        <p className="text-green-700 mb-1 flex items-center gap-1">
+          <MapPin size={16} /> {property.location}
+        </p>
 
-          {projects.length === 0 && (
-            <div className="col-span-3 text-center py-12">
-              <p className="text-gray-500 text-lg">No projects found in the portfolio.</p>
-              <p className="text-sm text-gray-400">Use the Admin Dashboard to add new projects.</p>
-            </div>
-          )}
-        </div>
+        <p className="mb-1">
+          <span className="font-bold text-red-600">Price:</span> KES {property.price.toLocaleString()}
+        </p>
+        <p className="mb-1">
+          <span className="font-bold text-red-600">Deposit:</span> KES {property.deposit.toLocaleString()}
+        </p>
+
+        {property.description && (
+          <>
+            {showDetails ? (
+              <p className="text-gray-500 mt-2 text-sm">{property.description}</p>
+            ) : (
+              <button
+                onClick={() => setShowDetails(true)}
+                className="mt-2 px-4 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition"
+              >
+                Details
+              </button>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
 };
 
-export default Projects;
+export default PropertyCard;
