@@ -35,6 +35,15 @@
       "deposit": 50000,
       "location": "Naserian",
       "image": "/assets/uploads/hope-gardens-phase-ii.png.jpeg"
+    },
+    {
+      "description": "Ready title Deeds\n15 Months Payment Plan\n",
+      "location": "KCA University",
+      "deposit": 50000,
+      "price": 450000,
+      "id": "KCA Phase 5",
+      "name": "KCA Phase 5",
+      "image": "/assets/uploads/kca-phase-5.png.jpeg"
     }
   ]
 }
