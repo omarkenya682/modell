@@ -7,9 +7,12 @@ interface PropertyCardProps {
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   // Construct image URL relative to public folder
-  const imageUrl = property.image
-    ? `/assets/uploads/${property.image}`
-    : 'https://picsum.photos/400/300?random=1'; // fallback image if none
+  // Use the CMS image path directly, fallback if missing
+const imageUrl = property.image && property.image.length > 0
+  ? property.image.startsWith('/assets/uploads/') 
+    ? property.image 
+    : `/assets/uploads/${property.image}`
+  : 'https://picsum.photos/400/300?random=1';
 
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
