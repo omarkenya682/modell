@@ -44,6 +44,15 @@
       "id": "KCA Phase 5",
       "name": "KCA Phase 5",
       "image": "/assets/uploads/kca-phase-5.png.jpeg"
+    },
+    {
+      "id": "Royal Gardens Phase II",
+      "description": "Ready title Deeds\n15 Months Payment Plan\n",
+      "name": "Royal Gardens Phase II",
+      "price": 900000,
+      "deposit": 100000,
+      "location": "Kisaju",
+      "image": "/assets/uploads/royal-gardens-phase-ii.png.jpeg"
     }
   ]
 }
