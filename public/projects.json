@@ -1,4 +1,13 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "id": "test-1",
+      "name": "Test Project",
+      "price": 100000,
+      "deposit": 20000,
+      "location": "Test Location",
+      "description": "Test description",
+      "image": "/assets/uploads/whatsapp-image-2026-01-22-at-5.21.12-pm.jpeg"
+    }
+  ]
 }
-
