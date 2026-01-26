@@ -8,6 +8,15 @@
       "location": "Test Location",
       "description": "Test description",
       "image": "/assets/uploads/whatsapp-image-2026-01-22-at-5.21.12-pm.jpeg"
+    },
+    {
+      "id": "test-2",
+      "name": "Test Project 2",
+      "price": 400000,
+      "deposit": 50000,
+      "location": "Nanyuki",
+      "description": "just someringj  b idkkbjvxks gooood ",
+      "image": "/assets/uploads/whatsapp-image-2026-01-22-at-5.21.12-pm.jpeg"
     }
   ]
 }
