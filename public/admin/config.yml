@@ -8,30 +8,20 @@ public_folder: "/assets/uploads"        # Path used in website
 collections:
   - name: "projects"
     label: "Projects"
-    format: "json"
-    extension: "json"
-    create: false
-    delete: false
-    editor:
-      preview: false
     files:
-      - label: "Projects Data"
-        name: "projects"
+      - name: "projects"
+        label: "All Projects"
         file: "public/projects.json"
+        format: "json"
         fields:
           - label: "Projects"
             name: "projects"
             widget: "list"
             fields:
-              - { label: "Project ID", name: "id", widget: "string" }
+              - { label: "ID", name: "id", widget: "string" }
               - { label: "Project Name", name: "name", widget: "string" }
               - { label: "Price (KES)", name: "price", widget: "number" }
               - { label: "Deposit (KES)", name: "deposit", widget: "number" }
               - { label: "Location", name: "location", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - label: "Image"
-                name: "image"
-                widget: "image"
-                media_folder: "public/assets/uploads"
-                public_folder: "/assets/uploads"
-
+              - { label: "Image", name: "image", widget: "string" }
