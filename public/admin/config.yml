@@ -8,26 +8,30 @@ public_folder: "/assets/uploads"        # Path used in website
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "data/projects"
-    create: true
-    slug: "{{slug}}"
-    extension: "json"   # ensures JSON is used, not markdown
-    media_folder: "public/assets/uploads"   # where the images are saved in repo
-    public_folder: "/assets/uploads"        # URL used on the website
-    fields:
-      - { label: "ID", name: "id", widget: "number", required: true }
-      - { label: "Project Name", name: "name", widget: "string", required: true }
-      - { label: "Price (KES)", name: "price", widget: "number", required: true }
-      - { label: "Deposit (KES)", name: "deposit", widget: "number", required: true }
-      - { label: "Location", name: "location", widget: "string", required: true }
-      - { label: "Description", name: "description", widget: "text", required: true }
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        required: true
-        media_library:
-          name: "file_system"
-          config:
-            allow_multiple: false
-            folder: "assets/uploads"    # path in repo
-            public_folder: "/assets/uploads"  # path used on website
+    format: "json"
+    extension: "json"
+    create: false
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "Projects Data"
+        name: "projects"
+        file: "public/projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Project ID", name: "id", widget: "string" }
+              - { label: "Project Name", name: "name", widget: "string" }
+              - { label: "Price (KES)", name: "price", widget: "number" }
+              - { label: "Deposit (KES)", name: "deposit", widget: "number" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                media_folder: "public/assets/uploads"
+                public_folder: "/assets/uploads"
+
