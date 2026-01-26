@@ -5,11 +5,14 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
+publish_mode: editorial_workflow
+
 collections:
   - name: "projects"
     label: "Projects"
     folder: "data/projects"
     create: true
+    slug: "{{slug}}"
     format: "json"
     extension: "json"
     fields:
