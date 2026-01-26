@@ -14,10 +14,13 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Project ID", name: "id", widget: "string" }
-      - { label: "Project Name", name: "name", widget: "string" }
-      - { label: "Price (KES)", name: "price", widget: "number" }
-      - { label: "Deposit (KES)", name: "deposit", widget: "number" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
+    - label: "Image"
+  name: "image"
+  widget: "image"
+  required: true
+  media_library:
+    name: "file_system"
+    config:
+      allow_multiple: false
+      folder: "public/assets/uploads"      # where files will be saved
+      public_folder: "/assets/uploads"     # path to use in your website
