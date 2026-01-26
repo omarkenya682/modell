@@ -1,13 +1,12 @@
-import type { Property } from '../types';
+import projectFiles from './projects/*.json';
+import { Property } from '../types';
 
-// Import all project JSON files at build time
-const modules = import.meta.glob('./projects/*.json', {
-  eager: true,
-});
-
-const projects: Property[] = Object.values(modules).map(
-  (mod: any) => mod.default
-);
-
-export default projects;
-
+export const projects: Property[] = projectFiles.map((proj: any) => ({
+  id: proj.id,
+  name: proj.name,
+  price: proj.price,
+  deposit: proj.deposit,
+  location: proj.location,
+  description: proj.description,
+  image: proj.image
+}));
