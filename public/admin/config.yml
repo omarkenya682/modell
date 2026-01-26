@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "public/assets/uploads"       # Default media folder for CMS uploads
-public_folder: "/assets/uploads"     # URL path used in the website
+media_folder: "public/assets/uploads"   # where CMS saves images physically
+public_folder: "/assets/uploads"        # path used in website
 
 collections:
   - name: "site"
@@ -33,5 +33,5 @@ collections:
                   name: "file_system"
                   config:
                     allow_multiple: false
-                    folder: "public/assets/uploads"    # Physical folder in repo
-                    public_folder: "/assets/uploads"   # URL path for website
+                    folder: "public/assets/uploads"
+                    public_folder: "/assets/uploads"
