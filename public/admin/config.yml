@@ -10,10 +10,11 @@ collections:
     label: "Projects"
     folder: "data/projects"
     create: true
-    slug: "{{slug}}"
+    format: "json"
+    extension: "json"
     fields:
-      - { label: "Project Name", name: "title", widget: "string" }
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Price", name: "price", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
