@@ -1,3 +1,13 @@
 {
-  "testimonials": []
+  "testimonials": [
+    {
+      "stars": 5,
+      "id": "Esther  Makori",
+      "name": "Esther  Makori",
+      "project": "KCA Phase 4",
+      "role": "Home invester",
+      "quote": "I love the flexible Payment Plan that allowed me pay without stress for my plots. This is a thumb up for Model Land Investment! I'm settled now . Thanks to Model Land.",
+      "image": "/assets/uploads/whatsapp-image-2025-10-06-at-8.44.06-pm-1-.jpeg"
+    }
+  ]
 }
