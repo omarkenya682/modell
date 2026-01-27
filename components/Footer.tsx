@@ -105,17 +105,10 @@ const Footer: React.FC<FooterProps> = ({ setView, settings }) => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Model Land Investment. All Rights Reserved.</p>
-          {setView && (
-            <button 
-              onClick={() => setView(ViewState.ADMIN)} 
-              className="flex items-center gap-1 hover:text-green-500 transition-colors mt-4 md:mt-0"
-            >
-              <Lock size={12} /> Admin Login
-            </button>
-          )}
-        </div>
+       <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+  <p>&copy; {new Date().getFullYear()} Model Land Investment. All Rights Reserved.</p>
+</div>
+
       </div>
     </footer>
   );
