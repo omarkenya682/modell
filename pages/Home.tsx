@@ -90,6 +90,71 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
           </div>
         </div>
       </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-green-700 mb-10">
+            Why Choose Model Land Investment
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h3 className="text-xl font-semibold text-green-700 mb-2">
+                Genuine Title Deeds
+              </h3>
+              <p className="text-gray-600">
+                All our projects come with verified and ready title deeds.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h3 className="text-xl font-semibold text-green-700 mb-2">
+                Prime Locations
+              </h3>
+              <p className="text-gray-600">
+                Strategically located land with high growth potential.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow text-center">
+              <h3 className="text-xl font-semibold text-green-700 mb-2">
+                Flexible Payments
+              </h3>
+              <p className="text-gray-600">
+                Affordable deposits and flexible installment plans.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="py-16 bg-green-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <p className="text-4xl font-extrabold text-red-500">2020</p>
+              <p className="mt-2 text-green-100">Year Founded</p>
+            </div>
+
+            <div>
+              <p className="text-4xl font-extrabold text-red-500">1,000+</p>
+              <p className="mt-2 text-green-100">Happy Clients</p>
+            </div>
+
+            <div>
+              <p className="text-4xl font-extrabold text-red-500">60+</p>
+              <p className="mt-2 text-green-100">Projects Completed</p>
+            </div>
+
+            <div>
+              <p className="text-4xl font-extrabold text-red-500">100%</p>
+              <p className="mt-2 text-green-100">Title Deed Delivery</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
