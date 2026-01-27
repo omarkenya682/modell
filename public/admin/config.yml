@@ -9,7 +9,10 @@ collections:
   - name: "site"
     label: "Site Content"
     files:
-      # Projects
+
+      # =======================
+      # PROJECTS (DO NOT TOUCH)
+      # =======================
       - name: "projects"
         label: "Projects"
         file: "public/projects.json"
@@ -37,7 +40,9 @@ collections:
                     folder: "public/assets/uploads"
                     public_folder: "/assets/uploads"
 
-      # Testimonials
+      # =======================
+      # TESTIMONIALS (RESTORED)
+      # =======================
       - name: "testimonials"
         label: "Testimonials"
         file: "public/testimonials.json"
@@ -51,8 +56,9 @@ collections:
               - { label: "ID", name: "id", widget: "string" }
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role", name: "role", widget: "string" }
-              - { label: "Project", name: "project", widget: "string" }
+              - { label: "Project Invested In", name: "project", widget: "string" }
               - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Stars", name: "stars", widget: "number", min: 1, max: 5, default: 5 }
               - label: "Image"
                 name: "image"
                 widget: "image"
@@ -63,12 +69,29 @@ collections:
                     allow_multiple: false
                     folder: "public/assets/uploads"
                     public_folder: "/assets/uploads"
-              - { label: "Stars", name: "stars", widget: "number", min: 1, max: 5, default: 5 }
 
-      # Site Settings (for video URL, hero images, etc.)
+      # =======================
+      # SITE SETTINGS (UPGRADED)
+      # =======================
       - name: "settings"
         label: "Site Settings"
         file: "public/settings.json"
         fields:
-          - { label: "Hero Images", name: "heroImages", widget: "list", required: false }
-          - { label: "Testimonial Video URL", name: "testimonialVideoUrl", widget: "string", required: false }
+          - label: "Hero Images"
+            name: "heroImages"
+            widget: "list"
+            required: false
+
+          - label: "Show Testimonial Videos"
+            name: "showTestimonialVideos"
+            widget: "boolean"
+            default: true
+
+          - label: "Testimonial Videos"
+            name: "testimonialVideos"
+            widget: "list"
+            required: false
+            fields:
+              - label: "YouTube Video Link"
+                name: "video"
+                widget: "string"
