@@ -1,3 +1,9 @@
 {
-  "testimonialVideoUrl": "https://youtu.be/bs_BEfO67ZY?si=RlWqX3itihSe0LRu"
+  "testimonialVideoUrl": "https://youtu.be/bs_BEfO67ZY?si=RlWqX3itihSe0LRu",
+  "testimonialVideos": [
+    {
+      "video": "https://youtu.be/bs_BEfO67ZY?si=oGw0z4CY9vEZ3ylU"
+    }
+  ],
+  "showTestimonialVideos": true
 }
