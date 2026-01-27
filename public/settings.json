@@ -1,7 +1,14 @@
 {
   "heroImages": [],
   "testimonialVideos": [
-    { "url": "https://www.youtube.com/embed/VIDEO1", "show": true },
-    { "url": "https://www.youtube.com/embed/VIDEO2", "show": false }
-  ]
+    {
+      "url": "https://www.youtube.com/embed/VIDEO1",
+      "show": true,
+      "video": "https://youtu.be/dqYc_3dQi40?si=sN4r7Hrxm3g_7maw"
+    },
+    {
+      "video": "https://youtu.be/KsJgeBLkgl8?si=qFctAS2SgZO8saHR"
+    }
+  ],
+  "showTestimonialVideos": true
 }
