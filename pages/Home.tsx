@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle, Award, ThumbsUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Button from '../components/Button';
 import PropertyCard from '../components/PropertyCard';
 import { Property, SiteSettings, ViewState } from '../types';
+import projectsData from '../public/projects.json';
 
-// 🔹 Load ALL projects created via Admin (JSON)
-const projectFiles = import.meta.glob('../data/projects/*.json', { eager: true });
-const allProjects: Property[] = Object.values(projectFiles).map(
-  (mod: any) => mod.default
-);
+// ✅ SAME SOURCE AS ADMIN & PROJECTS PAGE
+const allProjects: Property[] = projectsData.projects || [];
 
 interface HomeProps {
   setView: (view: ViewState) => void;
@@ -18,15 +16,15 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ setView, settings }) => {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
 
-  // ✅ OPTION A: First 3 projects = Featured Projects
+  // ⭐ FEATURED = first 3 projects
   const featuredProjects = allProjects.slice(0, 3);
 
   const heroImages = settings?.heroImages?.length
     ? settings.heroImages
     : [
-        'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+        'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80'
       ];
 
   useEffect(() => {
@@ -56,7 +54,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
         <div className="container mx-auto px-4 relative z-10 text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Invest in Value Added Plots With{' '}
-            <span className="text-[#FF2C2C]">Ready Title Deeds</span>
+            <span className="text-red-600">Ready Title Deeds</span>
           </h1>
 
           <Button size="lg" variant="secondary" onClick={() => setView(ViewState.PROJECTS)}>
@@ -87,7 +85,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
 
           <div className="text-center mt-10">
             <Button variant="outline" onClick={() => setView(ViewState.PROJECTS)}>
-              View All Projects <ArrowRight size={18} className="ml-2" />
+              View All Projects <ArrowRight className="ml-2" size={18} />
             </Button>
           </div>
         </div>
