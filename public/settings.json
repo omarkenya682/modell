@@ -1,5 +1,7 @@
 {
-  "testimonialVideoUrl": "https://youtu.be/bs_BEfO67ZY?si=RlWqX3itihSe0LRu",
-  "testimonialVideos": [],
-  "showTestimonialVideos": false
+  "heroImages": [],
+  "testimonialVideos": [
+    { "url": "https://www.youtube.com/embed/VIDEO1", "show": true },
+    { "url": "https://www.youtube.com/embed/VIDEO2", "show": false }
+  ]
 }
