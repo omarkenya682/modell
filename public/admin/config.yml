@@ -9,6 +9,7 @@ collections:
   - name: "site"
     label: "Site Content"
     files:
+      # Projects
       - name: "projects"
         label: "Projects"
         file: "public/projects.json"
@@ -35,3 +36,39 @@ collections:
                     allow_multiple: false
                     folder: "public/assets/uploads"
                     public_folder: "/assets/uploads"
+
+      # Testimonials
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "public/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            allow_add: true
+            collapsed: false
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Project", name: "project", widget: "string" }
+              - { label: "Quote", name: "quote", widget: "text" }
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                required: true
+                media_library:
+                  name: "file_system"
+                  config:
+                    allow_multiple: false
+                    folder: "public/assets/uploads"
+                    public_folder: "/assets/uploads"
+              - { label: "Stars", name: "stars", widget: "number", min: 1, max: 5, default: 5 }
+
+      # Site Settings (for video URL, hero images, etc.)
+      - name: "settings"
+        label: "Site Settings"
+        file: "public/settings.json"
+        fields:
+          - { label: "Hero Images", name: "heroImages", widget: "list", required: false }
+          - { label: "Testimonial Video URL", name: "testimonialVideoUrl", widget: "string", required: false }
