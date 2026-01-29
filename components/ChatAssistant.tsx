@@ -56,7 +56,7 @@ How can I help you today?`,
     }
 
     if (msg.includes('visit') || msg.includes('site')) {
-      return `📍 Site visits are available every week.\n\n📞 Call or WhatsApp: +254 794 132 637\n\nWould you like me to guide you to a project first?`;
+      return `📍 Site visits are available every day.\n\n📞 Call or WhatsApp: +254 794 132 637\n\nWould you like me to guide you to a project first?`;
     }
 
     if (msg.includes('contact') || msg.includes('phone')) {
