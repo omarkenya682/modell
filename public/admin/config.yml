@@ -10,7 +10,9 @@ collections:
     label: "Site Content"
     files:
 
+      # =====================
       # Projects
+      # =====================
       - name: "projects"
         label: "Projects"
         file: "public/projects.json"
@@ -38,7 +40,9 @@ collections:
                     folder: "public/assets/uploads"
                     public_folder: "/assets/uploads"
 
+      # =====================
       # Testimonials
+      # =====================
       - name: "testimonials"
         label: "Testimonials"
         file: "public/testimonials.json"
@@ -66,15 +70,33 @@ collections:
                     public_folder: "/assets/uploads"
               - { label: "Stars", name: "stars", widget: "number", min: 1, max: 5, default: 5 }
 
-      # Site Settings (hero images, testimonial videos, etc.)
+      # =====================
+      # Site Settings
+      # =====================
       - name: "settings"
         label: "Site Settings"
         file: "public/settings.json"
         fields:
-          - { label: "Hero Images", name: "heroImages", widget: "list", required: false }
+
+          # FIXED: Hero Images (UPLOAD, NOT PASTE LINK)
+          - label: "Hero Images"
+            name: "heroImages"
+            widget: "list"
+            required: false
+            field:
+              label: "Hero Image"
+              name: "image"
+              widget: "image"
+              media_library:
+                name: "file_system"
+                config:
+                  folder: "public/assets/uploads"
+                  public_folder: "/assets/uploads"
+
+          # UNCHANGED: Testimonial Videos (already working)
           - label: "Testimonial Videos"
             name: "testimonialVideos"
             widget: "list"
             fields:
-              - { label: "Video URL", name: "url", widget: "string", required: true }
+              - { label: "Video URL (Embed)", name: "url", widget: "string", required: true }
               - { label: "Show Video", name: "show", widget: "boolean", default: true }
