@@ -19,21 +19,8 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
   // ⭐ FEATURED = first 3 projects
   const featuredProjects = allProjects.slice(0, 3);
 
-  // ✅ FIX: normalize hero images (supports CMS uploads + old links)
-  const heroImages: string[] =
-    settings?.heroImages?.length
-      ? settings.heroImages
-          .map((item: any) =>
-            typeof item === 'string'
-              ? item
-              : item.image || item.url
-          )
-          .filter(Boolean)
-      : [
-          'https://i.ibb.co/mrMmfQkg/Whats-App-Image-2026-01-22-at-5-21-12-PM.jpg',
-          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
-          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80'
-        ];
+  // ✅ HERO IMAGES: Use admin panel images; fallback empty array (no hardcoded images)
+  const heroImages: string[] = settings?.heroImages || [];
 
   useEffect(() => {
     if (!heroImages.length) return;
