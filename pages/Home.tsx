@@ -19,8 +19,23 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
   // ⭐ FEATURED = first 3 projects
   const featuredProjects = allProjects.slice(0, 3);
 
-  // ✅ HERO IMAGES: Use admin panel images; fallback empty array (no hardcoded images)
-  const heroImages: string[] = settings?.heroImages || [];
+  // ✅ FIXED HERO IMAGES: supports admin uploads + old links
+  const heroImages: string[] =
+    settings?.heroImages?.length
+      ? settings.heroImages
+          .map((item: any) =>
+            typeof item === 'string'
+              ? item
+              : item.image
+                ? process.env.PUBLIC_URL + item.image
+                : item.url
+          )
+          .filter(Boolean)
+      : [
+          '/assets/uploads/hero1.jpg',
+          '/assets/uploads/hero2.jpg',
+          '/assets/uploads/hero3.jpg'
+        ];
 
   useEffect(() => {
     if (!heroImages.length) return;
@@ -31,6 +46,11 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
 
     return () => clearInterval(interval);
   }, [heroImages.length]);
+
+  // ✅ Debugging: see which hero images are used
+  useEffect(() => {
+    console.log('Hero Images:', heroImages);
+  }, [heroImages]);
 
   return (
     <div className="animate-fade-in">
