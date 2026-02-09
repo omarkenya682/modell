@@ -19,18 +19,29 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
   // ⭐ FEATURED = first 3 projects
   const featuredProjects = allProjects.slice(0, 3);
 
-  const heroImages = settings?.heroImages?.length
-    ? settings.heroImages
-    : [
-        'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80'
-      ];
+  // ✅ FIX: normalize hero images (supports CMS uploads + old links)
+  const heroImages: string[] =
+    settings?.heroImages?.length
+      ? settings.heroImages
+          .map((item: any) =>
+            typeof item === 'string'
+              ? item
+              : item.image || item.url
+          )
+          .filter(Boolean)
+      : [
+          'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80'
+        ];
 
   useEffect(() => {
+    if (!heroImages.length) return;
+
     const interval = setInterval(() => {
       setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
     }, 5000);
+
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
@@ -43,6 +54,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
             <img
               key={index}
               src={img}
+              alt={`Hero ${index + 1}`}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                 index === currentHeroIndex ? 'opacity-60' : 'opacity-0'
               }`}
