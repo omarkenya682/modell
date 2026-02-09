@@ -1,13 +1,16 @@
 {
   "heroImages": [
-    "https://ibb.co/bMB546jy"
+    "/assets/uploads/hero-1.jpg",
+    "/assets/uploads/hero-2.jpg",
+    "/assets/uploads/hero-3.jpg"
   ],
+
   "testimonialVideos": [
     {
       "url": "https://www.youtube.com/embed/sKHkLcM_few?si=D4cC3jcR6dGGNSyN",
-      "show": true,
-      "video": "https://youtu.be/dqYc_3dQi40?si=sN4r7Hrxm3g_7maw"
+      "show": true
     }
   ],
+
   "showTestimonialVideos": true
 }
