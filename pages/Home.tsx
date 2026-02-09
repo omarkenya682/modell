@@ -29,7 +29,11 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
               : item.image || item.url
           )
           .filter(Boolean)
-      : ;
+      : [
+          'https://i.ibb.co/mrMmfQkg/Whats-App-Image-2026-01-22-at-5-21-12-PM.jpg',
+          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
+          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80'
+        ];
 
   useEffect(() => {
     if (!heroImages.length) return;
