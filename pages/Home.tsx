@@ -2,55 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Button from '../components/Button';
 import PropertyCard from '../components/PropertyCard';
-import { Property, SiteSettings, ViewState } from '../types';
+import { Property, ViewState } from '../types';
 import projectsData from '../public/projects.json';
 
-// ✅ SAME SOURCE AS ADMIN & PROJECTS PAGE
 const allProjects: Property[] = projectsData.projects || [];
 
 interface HomeProps {
   setView: (view: ViewState) => void;
-  settings?: SiteSettings;
 }
 
-const Home: React.FC<HomeProps> = ({ setView, settings }) => {
+const Home: React.FC<HomeProps> = ({ setView }) => {
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
 
-  // ⭐ FEATURED = first 3 projects
+  // FEATURED = first 3 projects
   const featuredProjects = allProjects.slice(0, 3);
 
-  // ✅ FIXED HERO IMAGES: supports admin uploads + old links
-  const heroImages: string[] =
-    settings?.heroImages?.length
-      ? settings.heroImages
-          .map((item: any) =>
-            typeof item === 'string'
-              ? item
-              : item.image
-                ? process.env.PUBLIC_URL + item.image
-                : item.url
-          )
-          .filter(Boolean)
-      : [
-          '/assets/uploads/hero1.jpg',
-          '/assets/uploads/hero2.jpg',
-          '/assets/uploads/hero3.jpg'
-        ];
+  // 🔹 DIRECT HERO IMAGES
+  const heroImages: string[] = [
+    'https://image2url.com/r2/default/images/1770632251123-b365c145-13c6-4c20-bee7-0126a251f673.png',
+    'https://image2url.com/r2/default/images/1770633025455-f10eb682-473e-4070-8e77-345d0e0c1196.jpeg',
+    'https://image2url.com/r2/default/images/1770633119411-85b19264-a872-454f-b58f-2da5043819ba.jpeg'
+  ];
 
   useEffect(() => {
-    if (!heroImages.length) return;
-
     const interval = setInterval(() => {
       setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [heroImages.length]);
-
-  // ✅ Debugging: see which hero images are used
-  useEffect(() => {
-    console.log('Hero Images:', heroImages);
-  }, [heroImages]);
 
   return (
     <div className="animate-fade-in">
@@ -72,8 +51,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
 
         <div className="container mx-auto px-4 relative z-10 text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Invest in Value Added Plots With{' '}
-            <span className="text-red-600">Ready Title Deeds</span>
+            Invest in Value Added Plots With <span className="text-red-600">Ready Title Deeds</span>
           </h1>
 
           <Button size="lg" variant="secondary" onClick={() => setView(ViewState.PROJECTS)}>
@@ -82,7 +60,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
         </div>
       </section>
 
-      {/* ⭐ FEATURED PROJECTS */}
+      {/* FEATURED PROJECTS */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -94,11 +72,8 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
             {featuredProjects.map((project) => (
               <PropertyCard key={project.id} property={project} />
             ))}
-
             {featuredProjects.length === 0 && (
-              <p className="col-span-3 text-center text-gray-500">
-                No featured projects yet.
-              </p>
+              <p className="col-span-3 text-center text-gray-500">No featured projects yet.</p>
             )}
           </div>
 
@@ -106,71 +81,6 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
             <Button variant="outline" onClick={() => setView(ViewState.PROJECTS)}>
               View All Projects <ArrowRight className="ml-2" size={18} />
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-green-700 mb-10">
-            Why Choose Model Land Investment
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow text-center">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">
-                Genuine Title Deeds
-              </h3>
-              <p className="text-gray-600">
-                All our projects come with verified and ready title deeds.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow text-center">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">
-                Prime Locations
-              </h3>
-              <p className="text-gray-600">
-                Strategically located land with high growth potential.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow text-center">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">
-                Flexible Payments
-              </h3>
-              <p className="text-gray-600">
-                Affordable deposits and flexible installment plans.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="py-16 bg-green-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-4xl font-extrabold text-red-500">2020</p>
-              <p className="mt-2 text-green-100">Year Founded</p>
-            </div>
-
-            <div>
-              <p className="text-4xl font-extrabold text-red-500">1,000+</p>
-              <p className="mt-2 text-green-100">Happy Clients</p>
-            </div>
-
-            <div>
-              <p className="text-4xl font-extrabold text-red-500">60+</p>
-              <p className="mt-2 text-green-100">Projects Completed</p>
-            </div>
-
-            <div>
-              <p className="text-4xl font-extrabold text-red-500">100%</p>
-              <p className="mt-2 text-green-100">Title Deed Delivery</p>
-            </div>
           </div>
         </div>
       </section>
