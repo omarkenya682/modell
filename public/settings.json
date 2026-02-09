@@ -1,16 +1,15 @@
 {
   "heroImages": [
-    "/assets/uploads/hero-1.jpg",
-    "/assets/uploads/hero-2.jpg",
-    "/assets/uploads/hero-3.jpg"
+    "/assets/uploads/whatsapp-image-2026-01-22-at-5.21.12-pm.jpeg",
+    "/assets/uploads/whatsapp-image-2026-02-09-at-8.46.51-am-1-.jpeg",
+    "/assets/uploads/hope-gardens-phase-i.png.jpeg"
   ],
-
   "testimonialVideos": [
     {
       "url": "https://www.youtube.com/embed/sKHkLcM_few?si=D4cC3jcR6dGGNSyN",
-      "show": true
+      "show": true,
+      "video": "https://youtu.be/dqYc_3dQi40?si=sN4r7Hrxm3g_7maw"
     }
   ],
-
   "showTestimonialVideos": true
 }
