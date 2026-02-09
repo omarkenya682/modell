@@ -29,11 +29,7 @@ const Home: React.FC<HomeProps> = ({ setView, settings }) => {
               : item.image || item.url
           )
           .filter(Boolean)
-      : [
-          'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80',
-          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80',
-          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80'
-        ];
+      : ;
 
   useEffect(() => {
     if (!heroImages.length) return;
