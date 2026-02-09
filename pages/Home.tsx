@@ -19,7 +19,7 @@ const Home: React.FC<HomeProps> = ({ setView }) => {
 
   // 🔹 DIRECT HERO IMAGES
   const heroImages: string[] = [
-    'https://image2url.com/r2/default/images/1770632251123-b365c145-13c6-4c20-bee7-0126a251f673.png',
+    'https://i.imghippo.com/files/uEE1194rDU.png',
     'https://image2url.com/r2/default/images/1770633025455-f10eb682-473e-4070-8e77-345d0e0c1196.jpeg',
     'https://image2url.com/r2/default/images/1770633119411-85b19264-a872-454f-b58f-2da5043819ba.jpeg'
   ];
