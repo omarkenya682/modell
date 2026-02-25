@@ -1,40 +1,13 @@
 {
   "projects": [
     {
-      "id": "Hope Gardens Phase I",
-      "name": "Hope Gardens Phase I",
-      "price": 350000,
-      "deposit": 49999,
-      "location": "Naserian",
-      "description": "Ready Title deeds\n12 Months Payment Plan",
-      "image": "/assets/uploads/hope-gardens-phase-i.png.jpeg"
-    },
-    {
-      "description": "Ready Title deeds\n12 Months Payment Plan",
-      "id": "Hope Gardens Phase II",
-      "name": "Hope Gardens Phase II",
-      "price": 450000,
-      "deposit": 50000,
-      "location": "Naserian",
-      "image": "/assets/uploads/hope-gardens-phase-ii.png.jpeg"
-    },
-    {
-      "description": "Ready title Deeds\n15 Months Payment Plan\n",
-      "location": "KCA University",
-      "deposit": 50000,
-      "price": 450000,
-      "id": "KCA Phase 5",
-      "name": "KCA Phase 5",
-      "image": "/assets/uploads/kca-phase-5.png.jpeg"
-    },
-    {
-      "id": "Royal Gardens Phase II",
-      "description": "Ready title Deeds\n15 Months Payment Plan\n",
-      "name": "Royal Gardens Phase II",
-      "price": 900000,
+      "id": "KAG UNIVERSITY",
+      "name": "PARADISE GARDENS I",
+      "price": 950000,
       "deposit": 100000,
-      "location": "Kisaju",
-      "image": "/assets/uploads/royal-gardens-phase-ii.png.jpeg"
+      "location": "KAG UNIVERSITY",
+      "description": "THE PROJECT CONSISTS OF 50x100 PLOTS IDEAL FOR RESIDENTIAL USE.\nIT'S ONLY 4KM OFF NAMANGA ROAD.\nACCESSIBLE THROUGH MURRAM ROADS\nFLEXIBLE PAYMENT PLANS THAT ALLOWS YOU TO PAY UPTO 1 YEAR.\nIT IS WELL DRAINED AND HAS A SERENE ENVIRONMENT WITH PEACEFUL NEIGHBOURHOOD.",
+      "image": "/assets/uploads/paradise-web.jpeg"
     }
   ]
 }
