@@ -6,8 +6,53 @@
       "price": 950000,
       "deposit": 100000,
       "location": "KAG UNIVERSITY",
-      "description": "THE PROJECT CONSISTS OF 50x100 PLOTS IDEAL FOR RESIDENTIAL USE.\nIT'S ONLY 4KM OFF NAMANGA ROAD.\nACCESSIBLE THROUGH MURRAM ROADS\nFLEXIBLE PAYMENT PLANS THAT ALLOWS YOU TO PAY UPTO 1 YEAR.\nIT IS WELL DRAINED AND HAS A SERENE ENVIRONMENT WITH PEACEFUL NEIGHBOURHOOD.",
+      "description": "THE PROJECT CONSISTS OF 50x100 PLOTS IDEAL FOR RESIDENTIAL USE.\nIT HAS READY TITLE DEEDS.\nIT'S ONLY 4KM OFF NAMANGA ROAD.\nACCESSIBLE THROUGH MURRAM ROADS\nFLEXIBLE PAYMENT PLANS THAT ALLOWS YOU TO PAY UPTO 1 YEAR.\nIT IS WELL DRAINED AND HAS A SERENE ENVIRONMENT WITH PEACEFUL NEIGHBOURHOOD.",
       "image": "/assets/uploads/paradise-web.jpeg"
+    },
+    {
+      "id": "NASERIAN",
+      "name": "HOPE GARDENS I",
+      "price": 349999,
+      "deposit": 49999,
+      "location": "NEXT TO NASERAIN PRIMARY",
+      "description": "IT IS LOCATED NEXT TO NASERIAN  PRIMARY.\nIT HAS READY TITLE DEEDS.\n50K DEPOSIT AND CLEAR BALANCE IN 12 MONTHS.\nACCESIBLE THROUGH WELL GRADED MURRAM ROADS.\nCURRENTLY ALL THE PLOTS ARE SOLD OUT",
+      "image": "/assets/uploads/hope-gardens-phase-i.png.jpeg"
+    },
+    {
+      "id": "NASERIAN ",
+      "name": "HOPE GARDENS II",
+      "price": 400000,
+      "deposit": 50000,
+      "location": "NASERIAN",
+      "description": "CONSISTS OF 50x100 PLOTS.\n50K DEPOSIT AND CLEAR BALANCE IN 12 MONTHS.\nTHE PROJECT IS ACCCESSIBLE BY WELL GRADED MURRAM ROADS.\nIT HAS READY FREE HOLD TITLE DEEDS.\nIT IS 3KM ONLY FROM THE PROPOSED NEW KCA UNIVERSITY.",
+      "image": "/assets/uploads/hope-gardens-phase-ii.png.jpeg"
+    },
+    {
+      "id": "KCA UNIVERSITY",
+      "name": "KCA PHASE 5",
+      "price": 450000,
+      "deposit": 50000,
+      "location": "PROPOSED NEW KCA UNIVERSITY",
+      "description": "THE PROJECT IS ONLY 2K FROM THE PROPOSED NEW KCA UNIVERSITY.\nIT HAS READY TITLE DEEDS.\nALL THE PLOTS ARE 50x100.\n50K DEPOSIT  AND CLEAR BALANCE IN 12 MONTHS.\nIT IS ACCESSIBLE BY WELL-GRADED MURRAM ROADS.",
+      "image": "/assets/uploads/kca-phase-5.png.jpeg"
+    },
+    {
+      "id": "KISAJU",
+      "name": "ROYAL GARDENS I",
+      "price": 800000,
+      "deposit": 100000,
+      "location": "KISAJU",
+      "description": "3KM OFF NAMANGA ROAD.\n100K DEPOSIT.\nPAY UPTO 12 MONTHS.\nALL PLOTS ARE 50x100.\nIDEAL FOR RESIDENTIAL PURPOSES.\nCURRENTLY ALL THE PLOTS ARE SOLD OUT.",
+      "image": "/assets/uploads/img-20251119-wa0011-1-.jpg"
+    },
+    {
+      "id": "KISAJU",
+      "name": "ROYAL GARDENS II",
+      "price": 900000,
+      "deposit": 100000,
+      "location": "KISAJU",
+      "description": "50x100 PLOTS.\n100K DEPOSIT.\nIDEAL FOR RESIDENTIAL PURPOSES.\nPAY UPTO 12 MONTHS.\nREADY TITLE DEEDS.\n2KM OFF NAMANGA ROAD.\nCURRENTLY ALL PLOTS ARE SOLD OUT.",
+      "image": "/assets/uploads/royal-gardens-phase-ii.png.jpeg"
     }
   ]
 }
