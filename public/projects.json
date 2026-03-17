@@ -53,6 +53,15 @@
       "location": "KISAJU",
       "description": "50x100 PLOTS.\n100K DEPOSIT.\nIDEAL FOR RESIDENTIAL PURPOSES.\nPAY UPTO 12 MONTHS.\nREADY TITLE DEEDS.\n2KM OFF NAMANGA ROAD.\nCURRENTLY ALL PLOTS ARE SOLD OUT.",
       "image": "/assets/uploads/royal-gardens-phase-ii.png.jpeg"
+    },
+    {
+      "id": "KCA UNIVERSITY",
+      "name": "VICTORY GARDENS I",
+      "price": 300000,
+      "deposit": 50000,
+      "location": "KCA UNIVERSITY",
+      "description": "- 50X100 PLOTS IDEAL FOR SPECULATION OR INVESTMENT PURPOSES\n- THEY ARE LOCATED AT KCA UNIVERSITY \n- 5KM FROM FROM THE PROPOSED KCA UNIVERSITY\n- FLEXIBLE PAYMENT OPTIONS\n- READY TITLE DEEDS\n-PAY 50K DEPOSIT AND BALANCE IN 12 MONTHS.\n",
+      "image": "/assets/uploads/img_20260310_124644_240-2084084628.jpg"
     }
   ]
 }
